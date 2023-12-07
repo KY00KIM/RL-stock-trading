@@ -4,9 +4,17 @@ version = "0.1.0"
 description = "rl stock trading application"
 authors = ["KYOOKIM <dev.kyoomin@gmail.com>"]
 readme = "README.md"
+packages = [
+    { include='rl_stock_trading', from='.' }
+]
+
+[tool.poetry.scripts]
+main = "rl_stock_trading.run:run"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+yfinance = "^0.2.32"
+stable-baselines3 = {extras = ["extra"], version = "^2.2.1"}
 
 
 [build-system]
